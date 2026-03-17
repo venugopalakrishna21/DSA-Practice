@@ -14,16 +14,16 @@ class Node
 
 class Solution {
   public:
-    void preorder(Node* root,vector<int>&ans) {
+    void inorder(Node* root,vector<int>&ans) {
         if(root==NULL) return;
+        inorder(root->left,ans);
         ans.push_back(root->data);
-        preorder(root->left,ans);
-        preorder(root->right,ans);
+        inorder(root->right,ans);
     }
-    vector<int> preOrder(Node* root) {
+    vector<int> inorder(Node* root) {
         // code here
         vector<int>ans;
-        preorder(root,ans);
+        inorder(root,ans);
         return ans;
     }
 };
