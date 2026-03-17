@@ -13,11 +13,11 @@ class Solution {
 public:
     void answer(TreeNode* root,vector<int>&finalans) {
         if(root==NULL) return;
-        finalans.push_back(root->val);
         answer(root->left,finalans);
+        finalans.push_back(root->val);
         answer(root->right,finalans);
     }
-    vector<int> preorderTraversal(TreeNode* root) {
+    vector<int> inorderTraversal(TreeNode* root) {
         vector<int>finalans;
         answer(root,finalans);
         return finalans; 
